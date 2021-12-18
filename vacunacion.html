@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <base href="/" />
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5SG0KRSQDH"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", "G-5SG0KRSQDH");
+        </script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta
+            name="description"
+            content="Puedes verificar la aplicación de tu vacuna contra el coronavirus u otras que hayas recibido recientemente en el Carné de vacunación web del Ministerio de Salud. Aquí, está registrada la fecha y lugar donde se te inmunizó, además del tipo de vacuna que recibiste, el fabricante de la vacuna y el número de lote."
+        />
+        <meta name="keywords" content="Carnet Vacunas, Minsa, Covid19" />
+        <meta name="author" content="Minsa Perú" />
+        <meta http-equiv="Expires" content="0" />
+        <meta http-equiv="Last-Modified" content="0" />
+        <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <title>MINSA - Carnet Vacunación</title>
+        <link rel="apple-touch-icon" sizes="57x57" href="static/favicons/apple-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="60x60" href="static/favicons/apple-icon-60x60.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="static/favicons/apple-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="static/favicons/apple-icon-76x76.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="static/favicons/apple-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="static/favicons/apple-icon-120x120.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="static/favicons/apple-icon-144x144.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="static/favicons/apple-icon-152x152.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="static/favicons/apple-icon-180x180.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="static/favicons/android-icon-192x192.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="static/favicons/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="96x96" href="static/favicons/favicon-96x96.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="static/favicons/favicon-16x16.png" />
+        <link rel="shortcut icon" type="image/x-icon" href="static/favicons/favicon.ico" />
+        <link rel="manifest" href="static/favicons/manifest.json" />
+        <meta name="msapplication-TileColor" content="#b7e3e4" />
+        <meta name="msapplication-TileImage" content="static/favicons/ms-icon-144x144.png" />
+        <meta name="theme-color" content="#b7e3e4" />
+        <link id="app-template" rel="stylesheet" href="https://carnetvacunacion.minsa.gob.pe/static/css/app20211210.min.css" />
+    </head>
+    <body>
+        <div class="app" id="japp">
+            <div class="aContainer">
+                <div class="aLogo">
+                    <img src="https://carnetvacunacion.minsa.gob.pe/static/img/logo-carnet-opt.png" class="aLogoImg" alt="Logo Carnet de Vacunación - MINSA" />
+                </div>
+                <div class="aBody" id="jaBody">
+                    <div class="aTitle">
+                        <img src="https://carnetvacunacion.minsa.gob.pe/static/img/icon/injeccion-opt.png" width="30" height="30" alt="Icono Inyección" style="vertical-align: bottom;" />
+                        Carnet de Vacunación
+                    </div>
+                    <div class="aBorder1">
+                        <div class="row">
+                            <div class="col-3 text-center">
+                                <img src="https://carnetvacunacion.minsa.gob.pe/static/img/icon/user-1-opt.png" class="img-responsive" style="width: 100%; max-width: 8rem;" />
+                            </div>
+                            <div class="col-9">
+                                <div style="line-height: 1.3rem;">
+                                    AVELLANEDA PAITAN JEAN HECTOR
+                                    <hr style="border: none; border-top: #d3d8d8 solid 1px;" />
+                                    <b>Fec. Nac.:</b> 09/11/1990
+                                    <hr style="border: none; border-top: #d3d8d8 solid 1px;" />
+                                    <b>Edad:</b> 31 año(s) 1 mes(es) 09 día(s)
+                                    <hr style="border: none; border-top: #d3d8d8 solid 1px;" />
+                                    <b>Dirección:</b>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top: 0.8rem;">
+                        <!--<div class="col-12" style="font-size:1rem">                        
+                    Vacunas Aplicadas: <b>1</b>
+                </div>-->
+                        <div class="col-12" style="text-align: right;"></div>
+                    </div>
+                    <!--<hr style="border:none; border-top: #d3d8d8 solid 1px;"/>-->
+                    <div class="aCList" style="padding: 0;">
+                        <div class="aList">
+                            <div style="display: flex;">
+                                <div style="width: 2rem;">
+                                    <div class="aListIcon">
+                                        <img src="https://carnetvacunacion.minsa.gob.pe/static/img/icon/covid19-opt.png" class="img-responsive" alt="Icono COVID-19" />
+                                    </div>
+                                </div>
+                                <div style="width: 100%;">
+                                    <div class="aTxtTitle"><b>Vacuna contra Covid</b></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-7"></div>
+                                <div class="col-5">
+                                    <!--
+                        <select class="jOptVacuna" data-id="0">
+                            <option value=""></option>
+                            <option value="1" style="font-size:1rem;">Detalle de Vacuna</option>
+                        </select><a href="javascript:void(0);">VER DETALLE</a>
+                        <img src="https://carnetvacunacion.minsa.gob.pe/static/img/icon/chevron-circle-right-solid.png" alt="Icono Ver Detalle" style="vertical-align: middle;"/>
+                        -->
+									<a href="codigoQR.html">
+										<button type="button" class="btn btn1 btnEff jOptVacuna" data-id="0" style="border-radius: 0.4rem; margin: 0.3rem 0;">
+											<img src="https://carnetvacunacion.minsa.gob.pe/static/img/icon/eye-regular.png" alt="Icono ver certificado" style="vertical-align: middle;" />
+											VER CÓDIGO QR
+										</button>
+									</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12" style="background: #e7f6f5; border-radius: 5px;">
+                                    <div class="aTxtBody2">
+                                        <img src="https://carnetvacunacion.minsa.gob.pe/static/img/icon/arrow-alt-circle-right-regular.png" alt="Icono Dosis" style="vertical-align: sub;" />
+                                        1ª dosis
+                                    </div>
+                                    <div class="aTxtBody2 aTxtBody2-Right">
+                                        <img src="https://carnetvacunacion.minsa.gob.pe/static/img/icon/shield-alt-solid.png" alt="Icono fecha vacuna" style="vertical-align: sub;" />
+                                        Lunes 25 de Oct. del 2021
+                                    </div>
+                                    <div class="aTxtBody2 aTxtBody2-Right">
+                                        <img src="https://carnetvacunacion.minsa.gob.pe/static/img/icon/map-marker-alt-solid.png" alt="Icono lugar vacuna" style="vertical-align: sub;" />
+                                        LIMA ESTE - Estadio Municipal de Santa Anita - LIMA LIMA SANTA ANITA
+                                    </div>
+                                    <hr style="border: none; border-top: #dedede solid 1px;" />
+                                    <div class="aTxtBody2">
+                                        <img src="https://carnetvacunacion.minsa.gob.pe/static/img/icon/arrow-alt-circle-right-regular.png" alt="Icono Dosis" style="vertical-align: sub;" />
+                                        2ª dosis
+                                    </div>
+                                    <div class="aTxtBody2 aTxtBody2-Right">
+                                        <img src="https://carnetvacunacion.minsa.gob.pe/static/img/icon/shield-alt-solid.png" alt="Icono fecha vacuna" style="vertical-align: sub;" />
+                                        Jueves 18 de Nov. del 2021
+                                    </div>
+                                    <div class="aTxtBody2 aTxtBody2-Right">
+                                        <img src="https://carnetvacunacion.minsa.gob.pe/static/img/icon/map-marker-alt-solid.png" alt="Icono lugar vacuna" style="vertical-align: sub;" />
+                                        LIMA ESTE - Estadio Monumental - LIMA LIMA ATE
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="aLine1" style="margin-top: 0;" />
+                <div class="text-center" style="color: #5c5c5c; padding: 0 0.2rem 0.3rem;">
+                    Copyright © 2021. Desarrollado por la Oficina General de Tecnologías de la Información del Ministerio de Salud | Todos los derechos reservados.
+                </div>
+            </div>
+
+            <nav>
+                <ul>
+                    <!--<li>
+                    <a href="inicio/index" routerType="1">
+                        <i class="fad fa-home"></i>
+                        <span>Inicio</span>
+                    </a>
+                </li>-->
+                    <li>
+                        <a href="https://gis.minsa.gob.pe/gisipress" target="_blank">
+                            <img src="https://carnetvacunacion.minsa.gob.pe/static/img/icon/globe-americas-solid.png" alt="Icono Ver Ipress" />
+                            <span>Mapa</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="info/vacunas" routertype="2">
+                            <img src="https://carnetvacunacion.minsa.gob.pe/static/img/icon/exclamation-circle-solid.png" alt="Icono Ver Ipress" />
+                            <span>Info</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <button type="button" class="btn btn1 aBtnClose" id="btnGnSalir">Salir</button>
+        </div>
+        <script type="module" src="1639495141036app/index.js"></script>
+        <script nomodule>
+            document.location.href = "error-compatibilidad.html";
+        </script>
+    </body>
+</html>
