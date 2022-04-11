@@ -7,7 +7,8 @@
         "img":"https://carnetvacunacion.minsa.gob.pe/static/img/icon/user-1-opt.png",
         "dosis": [
             {"dosisNumber":"1ª dosis","date":"Lunes 25 de Oct. del 2021","description":"Vacuna contra Covid","place":"LIMA ESTE - Estadio Municipal de Santa Anita - LIMA LIMA SANTA ANITA"},
-            {"dosisNumber":"2ª dosis","date":"Jueves 18 de Nov. del 2021","description":"Vacuna contra Covid","place":"LIMA ESTE - Estadio Monumental - LIMA LIMA ATE"}
+            {"dosisNumber":"2ª dosis","date":"Jueves 18 de Nov. del 2021","description":"Vacuna contra Covid","place":"LIMA ESTE - Estadio Monumental - LIMA LIMA ATE"},
+            {"dosisNumber":"3ª dosis","date":"Miércoles 30 de Mar. del 2022","description":"Vacuna contra Covid Adulto","place":"LIMA NORTE - Estadio Lolo Fernández de Carabayllo - LIMA LIMA CARABAYLLO"}
         ]
     },
     {
@@ -18,7 +19,8 @@
         "img":"https://carnetvacunacion.minsa.gob.pe/static/img/icon/user-1-opt.png",
         "dosis": [
             {"dosisNumber":"1ª dosis","date":"Lunes 25 de Oct. del 2021","description":"Vacuna contra Covid","place":"LIMA NORTE - Estadio Lolo Fernandez - LIMA LIMA CARABAYLLO"},
-            {"dosisNumber":"2ª dosis","date":"Jueves 18 de Nov. del 2021","description":"Vacuna contra Covid","place":"LIMA NORTE - Estadio Lolo Fernandez - LIMA LIMA CARABAYLLO"}
+            {"dosisNumber":"2ª dosis","date":"Jueves 18 de Nov. del 2021","description":"Vacuna contra Covid","place":"LIMA NORTE - Estadio Lolo Fernandez - LIMA LIMA CARABAYLLO"},
+			{"dosisNumber":"3ª dosis","date":"Miércoles 30 de Mar. del 2022","description":"Vacuna contra Covid Adulto","place":"LIMA NORTE - Estadio Lolo Fernández de Carabayllo - LIMA LIMA CARABAYLLO"}
         ]
     },
     {
