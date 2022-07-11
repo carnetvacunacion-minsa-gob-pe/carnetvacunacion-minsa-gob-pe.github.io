@@ -1,200 +1,578 @@
-
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8"/>
-    <base href="/"/>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5SG0KRSQDH"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-5SG0KRSQDH');
-    </script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta name="description" content="Puedes verificar la aplicación de tu vacuna contra el coronavirus u otras que hayas recibido recientemente en el Carné de vacunación web del Ministerio de Salud. Aquí, está registrada la fecha y lugar donde se te inmunizó, además del tipo de vacuna que recibiste, el fabricante de la vacuna y el número de lote."/>
-    <meta name="keywords" content="Carnet Vacunas, Minsa, Covid19"/>
-    <meta name="author" content="Minsa Perú"/>
-    <meta http-equiv="Expires" content="0"/>
-    <meta http-equiv="Last-Modified" content="0"/>
-    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate"/>
-    <meta http-equiv="Pragma" content="no-cache"/>
-    <title>MINSA - Carnet Vacunación</title>
-    <link rel="apple-touch-icon" sizes="57x57" href="static/favicons/apple-icon-57x57.png"/>
-    <link rel="apple-touch-icon" sizes="60x60" href="static/favicons/apple-icon-60x60.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="static/favicons/apple-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="76x76" href="static/favicons/apple-icon-76x76.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="static/favicons/apple-icon-114x114.png"/>
-    <link rel="apple-touch-icon" sizes="120x120" href="static/favicons/apple-icon-120x120.png"/>
-    <link rel="apple-touch-icon" sizes="144x144" href="static/favicons/apple-icon-144x144.png"/>
-    <link rel="apple-touch-icon" sizes="152x152" href="static/favicons/apple-icon-152x152.png"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="static/favicons/apple-icon-180x180.png"/>
-    <link rel="icon" type="image/png" sizes="192x192" href="static/favicons/android-icon-192x192.png"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="static/favicons/favicon-32x32.png"/>
-    <link rel="icon" type="image/png" sizes="96x96" href="static/favicons/favicon-96x96.png"/>
-    <link rel="icon" type="image/png" sizes="16x16" href="static/favicons/favicon-16x16.png"/>
-    <link rel="shortcut icon" type="image/x-icon" href="static/favicons/favicon.ico"/>
-    <!--<link rel="manifest" href="static/favicons/manifest.json"/>-->
-    <meta name="msapplication-TileColor" content="#b7e3e4"/>
-    <meta name="msapplication-TileImage" content="static/favicons/ms-icon-144x144.png"/>
-    <!--<meta name="theme-color" content="#b7e3e4"/>-->
-    <link id="app-template" rel="stylesheet" href="https://carnetvacunacion.minsa.gob.pe/static/css/app20211210.min.css"/>
-</head>
-<body>
-<div class="app" id="japp">
-        <style>
-            .aFrmLoginIconHelp {
-                font-size: 1.2rem;
-                padding: 0.4rem 0.2rem 0;
-                cursor: pointer;
-                color: #9c9c9c;
+<html id="-html" lang="en" style="min-height: 100%; position: relative;">
+    <head>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+        <meta charset="utf-8" />
+        <title>MINSA - Carnet Vacunación</title>
+        <base href="/" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <link rel="icon" type="image/png" href="icon.png" />
+        <meta property="og:title" content="MINSA - Carnet Vacunación" />
+        <meta
+            name="description"
+            content="Puedes verificar la aplicación de tu vacuna contra el coronavirus u otras que hayas recibido recientemente en el Carnet de vacunación web del Ministerio de Salud. Aquí, está registrada la fecha y lugar donde se te inmunizó, además del tipo de vacuna que recibiste, el fabricante de la vacuna y el número de lote."
+        />
+
+        <meta name="keywords" content="Carnet Vacunas, Minsa, Covid19" />
+        <meta property="og:image" content="https://consultas-dev.sc.minsa.mvpdemoapp.com/assets/logo.png" />
+        <meta property="og:url" content="https://consultas-dev.sc.minsa.mvpdemoapp.com/" />
+        <meta property="og:type" content="website" />
+
+        <style type="text/css">
+            @font-face {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fCRc4AMP6lbBP.woff2) format("woff2");
+                unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+            }
+            @font-face {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fABc4AMP6lbBP.woff2) format("woff2");
+                unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+            }
+            @font-face {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fCBc4AMP6lbBP.woff2) format("woff2");
+                unicode-range: U+1F00-1FFF;
+            }
+            @font-face {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fBxc4AMP6lbBP.woff2) format("woff2");
+                unicode-range: U+0370-03FF;
+            }
+            @font-face {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fCxc4AMP6lbBP.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fChc4AMP6lbBP.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fBBc4AMP6lQ.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            @font-face {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2) format("woff2");
+                unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+            }
+            @font-face {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu5mxKKTU1Kvnz.woff2) format("woff2");
+                unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+            }
+            @font-face {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7mxKKTU1Kvnz.woff2) format("woff2");
+                unicode-range: U+1F00-1FFF;
+            }
+            @font-face {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4WxKKTU1Kvnz.woff2) format("woff2");
+                unicode-range: U+0370-03FF;
+            }
+            @font-face {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7WxKKTU1Kvnz.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7GxKKTU1Kvnz.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            @font-face {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fCRc4AMP6lbBP.woff2) format("woff2");
+                unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+            }
+            @font-face {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fABc4AMP6lbBP.woff2) format("woff2");
+                unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+            }
+            @font-face {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fCBc4AMP6lbBP.woff2) format("woff2");
+                unicode-range: U+1F00-1FFF;
+            }
+            @font-face {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fBxc4AMP6lbBP.woff2) format("woff2");
+                unicode-range: U+0370-03FF;
+            }
+            @font-face {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fCxc4AMP6lbBP.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fChc4AMP6lbBP.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fBBc4AMP6lQ.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
             }
         </style>
-        <div class="aContainer" style="top: 0px;">
-            <div class="text-center">
-                <img src="https://carnetvacunacion.minsa.gob.pe/static/img/logo-minsa-opt.jpg" alt="Logo Minsa" width="220" style="max-width: 15rem; width: 100%; border: #fff solid 1px">
-            </div>
-            <div class="aLogo">
-                <img src="https://carnetvacunacion.minsa.gob.pe/static/img/logo-carnet-opt.png" class="aLogoImg" alt="Logo Carnet Vacunación">
-            </div>
-            <div class="aBody" id="jaBody">
-                <form action="" method="post" id="frmLogin">
-                <div class="aFrmContainer aAnimationOpacityShow">                    
-                    <div class="aFrmHeader text-center" style="font-size:1.5em; padding:0; color: rgb(1, 135, 129)">
-                        <b>Ingrese los Datos Solicitados</b>
-                    </div>
-                    
-                    <div class="aFrmBody">
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="aFrmForm">
-                                    <label class="aFrmLabel" for="jaFrmRegVacLstTipoDoc"><b>Tipo Documento</b></label>
-                                    <select id="jaFrmRegVacLstTipoDoc"><option value="1">DOCUMENTO NACIONAL DE IDENTIDAD</option><option value="2">CARNET DE EXTRANJERÍA</option><option value="3">PASAPORTE</option><option value="4">DOCUMENTO DE IDENTIDAD EXTRANJERO</option><option value="5">SIN DOCUMENTO (CÓDIGO TEMPORAL)</option><option value="7">PERMISO TEMPORAL PERMANENCIA</option></select>
+        <style type="text/css">
+            @font-face {
+                font-family: "Material Icons";
+                font-style: normal;
+                font-weight: 400;
+                src: url(https://fonts.gstatic.com/s/materialicons/v129/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format("woff2");
+            }
+            .material-icons {
+                font-family: "Material Icons";
+                font-weight: normal;
+                font-style: normal;
+                font-size: 24px;
+                line-height: 1;
+                letter-spacing: normal;
+                text-transform: none;
+                display: inline-block;
+                white-space: nowrap;
+                word-wrap: normal;
+                direction: ltr;
+                -webkit-font-feature-settings: "liga";
+                -webkit-font-smoothing: antialiased;
+            }
+        </style>
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+            integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <script src="./assets/navegador/navegador.js"></script>
+        <style>
+            @import "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap";
+            *,
+            :before,
+            :after {
+                box-sizing: border-box;
+                border-width: 0;
+                border-style: solid;
+                border-color: #e5e7eb;
+            }
+            :before,
+            :after {
+                --tw-content: "";
+            }
+            html {
+                line-height: 1.5;
+                -webkit-text-size-adjust: 100%;
+                -moz-tab-size: 4;
+                tab-size: 4;
+                font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+            }
+            body {
+                margin: 0;
+                line-height: inherit;
+            }
+            *,
+            :before,
+            :after {
+                --tw-translate-x: 0;
+                --tw-translate-y: 0;
+                --tw-rotate: 0;
+                --tw-skew-x: 0;
+                --tw-skew-y: 0;
+                --tw-scale-x: 1;
+                --tw-scale-y: 1;
+                --tw-pan-x: ;
+                --tw-pan-y: ;
+                --tw-pinch-zoom: ;
+                --tw-scroll-snap-strictness: proximity;
+                --tw-ordinal: ;
+                --tw-slashed-zero: ;
+                --tw-numeric-figure: ;
+                --tw-numeric-spacing: ;
+                --tw-numeric-fraction: ;
+                --tw-ring-inset: ;
+                --tw-ring-offset-width: 0px;
+                --tw-ring-offset-color: #fff;
+                --tw-ring-color: rgb(59 130 246 / 0.5);
+                --tw-ring-offset-shadow: 0 0 #0000;
+                --tw-ring-shadow: 0 0 #0000;
+                --tw-shadow: 0 0 #0000;
+                --tw-shadow-colored: 0 0 #0000;
+                --tw-blur: ;
+                --tw-brightness: ;
+                --tw-contrast: ;
+                --tw-grayscale: ;
+                --tw-hue-rotate: ;
+                --tw-invert: ;
+                --tw-saturate: ;
+                --tw-sepia: ;
+                --tw-drop-shadow: ;
+                --tw-backdrop-blur: ;
+                --tw-backdrop-brightness: ;
+                --tw-backdrop-contrast: ;
+                --tw-backdrop-grayscale: ;
+                --tw-backdrop-hue-rotate: ;
+                --tw-backdrop-invert: ;
+                --tw-backdrop-opacity: ;
+                --tw-backdrop-saturate: ;
+                --tw-backdrop-sepia: ;
+            }
+            * {
+                outline: 2px solid transparent;
+                outline-offset: 2px;
+            }
+            body {
+                min-height: 100%;
+            }
+            html {
+                height: 100%;
+            }
+            * {
+                font-family: Roboto, sans-serif;
+            }
+        </style>
+        <link rel="stylesheet" href="styles.23a7e64a5f5cbd91.css" media="print" onload="this.media='all'" />
+        <noscript><link rel="stylesheet" href="styles.23a7e64a5f5cbd91.css" /></noscript>
+    </head>
+
+    <body id="-body" style="height: 100%; overflow: initial;" translate="no">
+        <app-root ng-version="13.1.3">
+            <router-outlet></router-outlet>
+            <app-main class="ng-star-inserted">
+                <div class="grid-container h-full" style="height: 100%;">
+                    <app-header class="navbar bg-buttonprimary ng-star-inserted" _nghost-wyh-c64="">
+                        <nav
+                            _ngcontent-wyh-c64=""
+                            class="fixed top-0 z-50 w-full flex flex-wrap items-center justify-between pt-[10px] pb-[10px] bg-buttonprimary text-gray-200 shadow-lg navbar navbar-expand-lg navbar-light paddingleft paddingright h-[64px]"
+                        >
+                            <div _ngcontent-wyh-c64="" class="w-full sm:container mx-auto flex flex-wrap items-center justify-between px-4 sm:px-8 lg:px-10 2xl:px-0">
+                                <a _ngcontent-wyh-c64="" class="cursor-pointer flex"><img _ngcontent-wyh-c64="" src="https://carnetvacunacion.minsa.gob.pe/assets/LogoMinsa.svg" alt="" class="mr-3 w-[200px]" /></a>
+                                <div _ngcontent-wyh-c64="" class="flex lg:hidden items-center md:order-2 ng-star-inserted">
+                                    <button
+                                        _ngcontent-wyh-c64=""
+                                        onclick="myFunction3()"
+                                        id="botonmostrar"
+                                        type="button"
+                                        aria-controls="mobile-menu-2"
+                                        class="inline-flex items-center h p-2 ml-1 text-sm text-white md:text-white rounded-lg lg:hidden"
+                                    >
+                                        <span _ngcontent-wyh-c64="" class="sr-only">Open main menu</span><span _ngcontent-wyh-c64="" id="icon1" class="material-icons"> menu </span>
+                                        <span _ngcontent-wyh-c64="" id="icon2" class="hidden material-icons"> close </span>
+                                    </button>
                                 </div>
+                                <!---->
+                                <div _ngcontent-wyh-c64="" class="lg:flex items-center hidden md:order-2 ng-star-inserted">
+                                    <ul _ngcontent-wyh-c64="" class="flex flex-col md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+                                        <li _ngcontent-wyh-c64="" class="underline">
+                                            <a _ngcontent-wyh-c64="" class="block pl-3 text-white text-base font-medium lg:font-normal cursor-pointer"> Política de Privacidad / Términos y Condiciones</a>
+                                        </li>
+                                        <li _ngcontent-wyh-c64="" class="underline"><a _ngcontent-wyh-c64="" class="block pl-3 text-white text-base font-medium lg:font-normal cursor-pointer">Cerrar sesión</a></li>
+                                    </ul>
+                                </div>
+                                <!---->
+                                <div _ngcontent-wyh-c64="" class="flex justify-between items-center w-full md:w-auto md:order-1 z-30"></div>
                             </div>
-                            <div class="col-6">
-                                <div class="aFrmForm">
-                                    <label class="aFrmLabel" for="jaFrmRegVacTxtNumDoc"><b>Número de Documento</b></label>
-                                    <div style="display: flex;">                                        
-                                        <input type="text" id="jaFrmRegVacTxtNumDoc" maxlength="8">
-                                        <div class="aFrmLoginIconHelp jaFrmXTDoc" title="¿Qué es?" data-type="1">
-                                            <img src="https://carnetvacunacion.minsa.gob.pe/static/img/icon/question-solid.png" alt="Icono Pregunta">
+                            <div _ngcontent-wyh-c64="" id="menu" class="bg-steep mt-[11px] z-50 w-full hidden ng-star-inserted">
+                                <ul _ngcontent-wyh-c64="" onclick="myFunctionclose()" class="flex flex-col lg:flex-row lg:space-x-8 lg:mt-0 lg:text-sm lg:font-medium">
+                                    <li _ngcontent-wyh-c64="" class="flex items-center hover:bg-buttonprimary active:bg-buttonprimary underline">
+                                        <a _ngcontent-wyh-c64="" class="px-4 sm:px-8 lg:px-10 2xl:px-0 block py-3 text-white text-base font-medium lg:font-normal cursor-pointer"> Política de Privacidad / Términos y Cond.</a>
+                                    </li>
+                                    <li _ngcontent-wyh-c64="" class="hover:bg-buttonprimary active:bg-buttonprimary underline">
+                                        <a _ngcontent-wyh-c64="" class="px-4 sm:px-8 lg:px-10 2xl:px-0 block py-3 text-white text-base font-medium lg:font-normal cursor-pointer">Cerrar sesión </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!---->
+                        </nav>
+                    </app-header>
+                    <!---->
+                    <div class="main h-full">
+                        <router-outlet></router-outlet>
+                        <app-home _nghost-wyh-c81="" class="ng-star-inserted">
+                            <div _ngcontent-wyh-c81="" class="main h-full ng-star-inserted">
+                                <div _ngcontent-wyh-c81="" class="grid lg:grid-cols-2 lg:h-full">
+                                    <div _ngcontent-wyh-c81="" class="lg:bg-gray-100 flex justify-center lg:justify-end">
+                                        <div _ngcontent-wyh-c81="" class="w-full md:w-[759px] lg:w-[505px] xl:w-[634px] 2xl:w-[759px] paddingleft" style="display: flex; justify-content: center;">
+                                            <div _ngcontent-wyh-c81="" class="flex flex-col items-center pt-4 sm:pt-8 lg:pt-[24px] px-4 sm:px-8 lg:px-10 2xl:px-0 2xl:w-9/12 md:sticky md:top-[0]">
+                                                <div _ngcontent-wyh-c81="" id="carnet" class="w-full sm:w-[340px] bg-white drop-shadow-md rounded-t-xl rounded-b-xl grid lg:mt-[30px]">
+                                                    <div _ngcontent-wyh-c81="" class="px-8 pt-6">
+                                                        <div _ngcontent-wyh-c81="" class="flex justify-center"><img _ngcontent-wyh-c81="" src="https://carnetvacunacion.minsa.gob.pe/assets/carnet.png" alt="" class="w-2/4" /></div>
+                                                        <div _ngcontent-wyh-c81="">
+                                                            <qr-code _ngcontent-wyh-c81="" class="flex justify-center mt-4">
+                                                                <img
+                                                                    height="183"
+                                                                    width="183"
+                                                                    src="data:image/png;base64,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"
+                                                                />
+                                                            </qr-code>
+                                                        </div>
+                                                        <div _ngcontent-wyh-c81="" class="flex justify-center">
+                                                            <span _ngcontent-wyh-c81="" class="font-extrabold text-textos text-[22px] xl:leading-[28px] uppercase mt-4 text-center">JEAN HECTOR AVELLANEDA PAITAN</span>
+                                                        </div>
+                                                        <div _ngcontent-wyh-c81="" class="flex justify-between mt-4">
+                                                            <span _ngcontent-wyh-c81="" class="font-semibold text-base"><span _ngcontent-wyh-c81="" class="text-sm font-normal">DNI:</span> 46758251</span>
+                                                            <span _ngcontent-wyh-c81="" class="font-semibold text-base"><span _ngcontent-wyh-c81="" class="text-sm font-normal">Edad:</span> 31 AÑOS</span>
+                                                        </div>
+                                                        <hr _ngcontent-wyh-c81="" class="mt-3" style="border: 1px solid; color: rgb(121, 171, 63);" />
+                                                        <div _ngcontent-wyh-c81="" class="text-center">
+                                                            <h3 _ngcontent-wyh-c81="" class="mt-2 text-pressed text-[18px] font-semibold">VACUNACIÓN COVID-19</h3>
+                                                            <h3 _ngcontent-wyh-c81="" class="text-[24px] sm:text-[28px] font-extrabold mb-1 uppercase" style="color: rgb(121, 171, 63);">CON TERCERA DOSIS</h3>
+                                                        </div>
+                                                    </div>
+                                                    <div _ngcontent-wyh-c81="" class="rounded-b-xl" style="background: rgb(121, 171, 63);">
+                                                        <div _ngcontent-wyh-c81="" class="h-[64px] flex items-center justify-between px-8" style="border-radius: 0% 0% 0.75rem 0.75rem;">
+                                                            <h4 _ngcontent-wyh-c81="" class="text-white text-[30px]">Dosis</h4>
+                                                            <img _ngcontent-wyh-c81="" alt="dosses" src="https://carnetvacunacion.minsa.gob.pe/assets/icons/check.svg" class="ng-star-inserted" />
+                                                            <img _ngcontent-wyh-c81="" alt="dosses" src="https://carnetvacunacion.minsa.gob.pe/assets/icons/check.svg" class="ng-star-inserted" />
+                                                            <img _ngcontent-wyh-c81="" alt="dosses" src="https://carnetvacunacion.minsa.gob.pe/assets/icons/check.svg" class="ng-star-inserted" />
+                                                            <!---->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!---->
+                                                <h4 _ngcontent-wyh-c81="" class="mt-[30px] font-medium text-lg ng-star-inserted">Descarga tu Carnet de Vacunación:</h4>
+                                                <!---->
+                                                <div _ngcontent-wyh-c81="" class="mt-4 grid grid-cols-2 gap-6 w-full sm:w-[340px] ng-star-inserted">
+                                                    <div _ngcontent-wyh-c81="" class="ng-star-inserted">
+                                                        <button _ngcontent-wyh-c81="" type="button" class="button-descarga">
+                                                            <span _ngcontent-wyh-c81="" translate="no" class="material-icons mr-2"> picture_as_pdf </span><span _ngcontent-wyh-c81="" class="underline">Como PDF</span>
+                                                        </button>
+                                                    </div>
+                                                    <!---->
+                                                    <div _ngcontent-wyh-c81="" class="flex justify-end">
+                                                        <button _ngcontent-wyh-c81="" type="button" class="button-descarga">
+                                                            <span _ngcontent-wyh-c81="" translate="no" class="material-icons mr-2"> insert_photo </span><span _ngcontent-wyh-c81="" class="underline">Como imagen </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!---->
+                                            </div>
                                         </div>
-                                    </div>                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="aFrmForm">
-                                    <label class="aFrmLabel" for="txtFechaNacimiento"> <b>Fecha de Nacimiento</b> <span>(dd/mm/yyyy)</span></label>
-                                    <input type="text" id="txtFechaNacimiento" placeholder="dd/mm/yyyy" maxlength="10" lang="es" min="1900-01-01" max="2021-01-01">
-                                </div>
-                            </div>
-                            <div class="col-6 jaFrmXTDoc">
-                                <div class="aFrmForm">
-                                    <label class="aFrmLabel" for="txtFechaEmision"><b>Fecha de Emisión</b> <span>(dd/mm/yyyy)</span></label>
-                                    <div style="display: flex;">
-                                        <input type="text" id="txtFechaEmision" placeholder="dd/mm/yyyy" maxlength="10" lang="es" min="1900-01-01" max="2021-01-01">
-                                        <div class="aFrmLoginIconHelp jaFrmXTDoc" title="¿Qué es?" data-type="3">                                            
-                                            <img src="https://carnetvacunacion.minsa.gob.pe/static/img/icon/question-solid.png" alt="Icono Pregunta">
+                                    </div>
+                                    <div _ngcontent-wyh-c81="" class="flex justify-center lg:justify-start">
+                                        <div _ngcontent-wyh-c81="" class="w-full md:w-[759px] lg:w-[505px] xl:w-[634px] 2xl:w-[759px] paddingright flex justify-center lg:py-6 px-4 sm:px-8 lg:px-10 2xl:px-0">
+                                            <div _ngcontent-wyh-c81="" class="w-full lg:w-[430px]">
+                                                <div _ngcontent-wyh-c81="" class="grid sm:grid-cols-1 lg:grid-cols-1 gap-4 pt-[30px] lg:pt-10">
+                                                    <div _ngcontent-wyh-c81="" class="sm:row-span-1 shadow bg-white drop-shadow-md border-2 border-gris2 rounded-sm p-4 lg:p-6">
+                                                        <h2 _ngcontent-wyh-c81="" class="font-semibold text-textos text-[22px] leading-[26px] lg:text-[26px] lg:leading-[36px]">Tu Vacunación COVID-19</h2>
+                                                        <h3 _ngcontent-wyh-c81="" class="text-textos mt-[28px] font-medium text-lg leading-[24px] lg:text-[22px] lg:leading-7">Certificado COVID-19</h3>
+                                                        <div _ngcontent-wyh-c81="" class="flex justify-between mt-[12px] text-textos">
+                                                            <p _ngcontent-wyh-c81="" class="text-sm lg:text-lg">Visualiza y descarga tu Certificado de Vacunación COVID-19.</p>
+                                                        </div>
+                                                        <div _ngcontent-wyh-c81="" class="flex justify-end mt-[12px]">
+                                                            <button _ngcontent-wyh-c81="" type="button" class="w-auto button-primary2 underline h-[36px] text-sm">Ver Certificado de vacunación</button>
+                                                        </div>
+                                                        <h3 _ngcontent-wyh-c81="" class="text-textos mt-[28px] font-medium text-lg leading-[24px] lg:text-[22px] lg:leading-7">
+                                                            Esquema de vacunación <br _ngcontent-wyh-c81="" />
+                                                            COVID-19
+                                                        </h3>
+                                                        <div _ngcontent-wyh-c81="" class="flex justify-between mt-[12px] text-textos">
+                                                            <p _ngcontent-wyh-c81="" class="text-sm lg:text-lg">Revisa los detalles de tu vacunación COVID-19.</p>
+                                                        </div>
+                                                        <div _ngcontent-wyh-c81="" class="flex justify-end mt-[12px]">
+                                                            <a href="result.html">
+                                                                <button _ngcontent-wyh-c81="" type="button" class="w-auto button-primary2 underline h-[36px] text-sm">Ver esquema de vacunación</button>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div _ngcontent-wyh-c81="" class="sm:row-span-2 bg-plomo drop-shadow-md border-2 border-disabled rounded-sm p-4 lg:p-6">
+                                                        <h2 _ngcontent-wyh-c81="" class="font-semibold text-textos text-[22px] leading-[26px] lg:text-[26px] lg:leading-[36px]">Vacunación COVID-19 de menores de edad</h2>
+                                                        <div _ngcontent-wyh-c81="" class="flex justify-between mt-[20px] text-textos">
+                                                            <p _ngcontent-wyh-c81="" class="text-sm lg:text-lg">
+                                                                Visualiza y descarga la información de tus hijos menores de edad. Debes ser progenitor o apoderado del menor para realizar esta consulta.
+                                                            </p>
+                                                        </div>
+                                                        <div _ngcontent-wyh-c81="" class="flex justify-end mt-3">
+                                                            <button _ngcontent-wyh-c81="" type="button" class="button-primary2 underline h-[36px] text-sm">Vacunación covid-19 de menores</button>
+                                                        </div>
+                                                    </div>
+                                                    <div _ngcontent-wyh-c81="" class="sm:row-span-2 shadow bg-white drop-shadow-md border-2 border-gris2 rounded-sm p-4 lg:p-6">
+                                                        <h2 _ngcontent-wyh-c81="" class="font-semibold text-textos text-[22px] leading-[26px] lg:text-[26px] lg:leading-[36px]">Registra una Solicitud de Modificación</h2>
+                                                        <div _ngcontent-wyh-c81="" class="flex justify-between mt-[28px] text-textos">
+                                                            <p _ngcontent-wyh-c81="" class="text-sm lg:text-lg">
+                                                                Si hubiera algún error en la información sobre tu Vacunación COVID-19, o no visualizas algúna de tus dosis, registra una solicitud de modificación aquí:
+                                                            </p>
+                                                        </div>
+                                                        <div _ngcontent-wyh-c81="" class="flex justify-end mt-[12px]">
+                                                            <button _ngcontent-wyh-c81="" type="button" class="w-auto button-primary2 underline h-[36px] text-sm">Registrar una solicitud</button>
+                                                        </div>
+                                                        <h3 _ngcontent-wyh-c81="" class="text-textos mt-[28px] font-medium text-lg leading-[24px] lg:text-[22px] lg:leading-7">Seguimiento de Solicitudes</h3>
+                                                        <div _ngcontent-wyh-c81="" class="flex justify-between mt-[12px] text-textos">
+                                                            <p _ngcontent-wyh-c81="" class="text-sm lg:text-lg">Visualiza los detalles de tus solicitudes registradas.</p>
+                                                        </div>
+                                                        <div _ngcontent-wyh-c81="" class="flex justify-end mt-[12px]">
+                                                            <button _ngcontent-wyh-c81="" type="button" class="w-auto button-primary2 underline h-[36px] text-sm">Seguimiento de solicitudes</button>
+                                                        </div>
+                                                    </div>
+                                                    <!---->
+                                                </div>
+                                                <div _ngcontent-wyh-c81="" class="flex justify-end mt-[30px]">
+                                                    <a
+                                                        _ngcontent-wyh-c81=""
+                                                        fragmente="irarriba"
+                                                        type="button"
+                                                        data-toggle="button"
+                                                        class="mb-[60px] md:mb-16 cursor-pointer shadow-md shadow-gris1/60 active:shadow-gris1/0 transition duration-150 ease-in-out rotate-180 rounded-full bg-buttonprimary h-14 w-14 animate-bounce"
+                                                    >
+                                                        <span _ngcontent-wyh-c81="" translate="no" class="inline-flex justify-center items-center h-full w-full text-4xl rounded-full bg-buttonprimary material-icons text-white">
+                                                            arrow_upward
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="row" style="display:none">
-                            <div class="col-6 jaFrmXTDoc">
-                                <div class="aFrmForm">
-                                    <label class="aFrmLabel" for="txtCodigoVerificacion"> <b>Código de Verificación</b></label>
-                                    <div style="display: flex;">
-                                        <input type="number" id="txtCodigoVerificacion" value="1">
-                                        <div class="aFrmLoginIconHelp jaFrmXTDoc" title="¿Qué es?" data-type="4">
-                                            <img src="https://carnetvacunacion.minsa.gob.pe/static/img/icon/question-solid.png" alt="Icono Pregunta">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                            </div>                          
-                        </div>
-                        <hr class="aLine1">
-                        <div class="row">
-                            <div class="col-12">
-                                <div>
-                                    <a href="https://carnetvacunacion.minsa.gob.pe/publico/doc/politica-privacidad.pdf" style="font-size: 1rem" target="_blank"> Política de privacidad </a>
-                                </div>
-                            </div>
-                        </div>
-                        <hr class="aLine1">
-                        <div class="row">
-                            <div class="col-12">                               
-                                <input type="checkbox" id="chkPolitica" style="float:left; margin-right: 0.5rem">
-                                <label for="chkPolitica" style="font-size: 1rem; display:block; padding-top: 0.4rem;">
-                                    Acepto el <a href="https://carnetvacunacion.minsa.gob.pe/publico/doc/tratamiento-datos.pdf" style="font-size: 1rem" target="_blank"> tratamiento de mis datos personales </a>
-                                </label>                                                      
-                            </div>
-                        </div>
-                       
-                        <hr class="aLine1">
-
-                        <!--<div class="row">
-                            <div class="col-12">
-                                <div id="html_captcha" align="center"><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LcuApQdAAAAACr26JEbJyP-4TRNVasOT5U5bBlq&amp;co=aHR0cHM6Ly9jYXJuZXR2YWN1bmFjaW9uLm1pbnNhLmdvYi5wZTo0NDM.&amp;hl=es&amp;v=VZKEDW9wslPbEc9RmzMqaOAP&amp;size=normal&amp;cb=fgx55xgst7jf" width="304" height="78" role="presentation" name="a-jtlzdmy3msoo" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div>
-                            </div>
-                        </div>-->
-
-                        <div class="row">
-                            <div class="col-12">
-                                <div id="html_captcha" align="center"><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LcuApQdAAAAACr26JEbJyP-4TRNVasOT5U5bBlq&amp;co=aHR0cHM6Ly9jYXJuZXR2YWN1bmFjaW9uLm1pbnNhLmdvYi5wZTo0NDM.&amp;hl=es&amp;v=gZWLhEUEJFxEhoT5hpjn2xHK&amp;size=normal&amp;cb=p33zwxu2fjt5" width="304" height="78" role="presentation" name="a-soufjqr6s017" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div>
-                            </div>
-                        </div>
-
-
-                        <hr class="aLine1">
-
-                        <div class="row"> 
-                            <div class="col-4">                               
-                            </div>                           
-                            <div class="col-4" style="padding-top:15px">
-								<a href="vacunacion.html">
-									<button class="btn btn1 btnEff" id="btnEntrar" type="button">                                    
-										<img src="https://carnetvacunacion.minsa.gob.pe/static/img/icon/angle-double-right-solid.png" alt="Icono Iniciar Sesión" style="vertical-align: sub">
-										INICIAR SESIÓN
-									</button>
-								</a> 
-                            </div>
-                            <div class="col-4">                               
-                            </div>
-                        </div>
-                        <div class="row">                            
-                            <div class="col-4">                               
-                            </div>
-                            <div class="col-4" style="padding-top:10px">
-                                <div class="text-center" style="font-size: 1.3em;color: rgb(1, 135, 129); padding:0 0 0.2rem 0">¿Cuentas con tu código QR?</div>
-                                <button class="btn btn2 btnEff" id="btnVerificar" type="button">                                    
-                                    <img src="https://carnetvacunacion.minsa.gob.pe/static/img/icon/qrcode-solid.png" alt="Verificar" style="vertical-align: sub">
-                                    VALIDAR QR
-                                </button>
-                            </div>
-                            <div class="col-4">                               
-                            </div>
-                        </div>
-                        <hr class="aLine1">
-                        <div class="text-center" style="color:#6c6c6c">
-                            Copyright © 2021. Desarrollado por la Oficina General de Tecnologías de la Información del Ministerio de Salud | Todos los derechos reservados.
-                            <!--<a id="jaBtnReclamar" href="https://carnetvacunacion.minsa.gob.pe/" style="font-size:1rem">¿No puedes acceder al Carnet de Vacunación?</a>-->
-                        </div>
+                            <!----><!---->
+                        </app-home>
+                        <!---->
                     </div>
+                    <!---->
+                    <app-footer class="footer ng-star-inserted">
+                        <div class="h-[168px] md:h-[100px] paddingleft paddingright py-3 bg-textos flex items-center w-full" style="width: 100%;">
+                            <div class="w-full bg-textos sm:container mx-auto px-4 sm:px-8 lg:px-10 2xl:px-0">
+                                <p class="text-footertext text-xs lg:text-sm lg:leading-[22px] tracking-[0.25px] mt-[20px]">Copyright © 2022. Desarrollado por la Oficina General de Tecnologías de la Información del Ministerio de Salud.</p>
+                                <div class="grid md:flex justify-between mb-[28px]">
+                                    <p class="text-footertext text-xs lg:text-sm lg:leading-[22px] underline cursor-pointer mt-[16px] lg:mt-[8px] tracking-[0.25px]">Política de Privacidad y Términos y Condiciones.</p>
+                                    <p class="text-footertext text-xs lg:text-sm lg:leading-[22px] mt-[16px] lg:mt-[8px] tracking-[0.25px]">Todos los derechos reservados.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </app-footer>
+                    <!---->
                 </div>
-                </form>
-            </div>
-        </div>
-        </div>
-<!--<script type="module" src="1639495141036app/index.js"></script>-->
-<script nomodule>document.location.href = 'error-compatibilidad.html';</script>
-<script src="app.js"></script>
-</body>
+            </app-main>
+            <!---->
+        </app-root>
+
+        <script>
+            function myFunction3() {
+                var div = document.getElementById("menu");
+                var but = document.getElementById("botonmostrar");
+                var barras = document.getElementById("icon1");
+                var close = document.getElementById("icon2");
+                if (div.classList.contains("hidden")) {
+                    div.classList.remove("hidden");
+                    localStorage.setItem("menu", true);
+                    barras.style.display = "none";
+                    close.style.display = "block";
+                    document.addEventListener(
+                        "click",
+                        function (e) {
+                            var clic = e.target;
+                            if (localStorage.getItem("menu") && clic !== div && clic !== barras && clic !== but) {
+                                div.classList.add("hidden");
+                                barras.style.display = "block";
+                                close.style.display = "none";
+                            } else {
+                            }
+                        },
+                        false
+                    );
+                } else {
+                    localStorage.setItem("menu", false);
+                    div.classList.add("hidden");
+                    barras.style.display = "block";
+                    close.style.display = "none";
+                }
+            }
+
+            function irAbajo() {
+                window.addEventListener("scroll", () => {
+                    var scroll = document.documentElement.scrollTop;
+                    var botonabajo = document.getElementById("botonabajo");
+                    if (botonabajo == null) {
+                        return;
+                    }
+                    if (scroll < 80) {
+                        botonabajo.style.left = 80 + "%";
+                    } else {
+                        botonabajo.style.left = -85 + "%";
+                    }
+                });
+            }
+
+            irAbajo();
+        </script>
+
+        <script src="runtime.006a387c652e70c9.js" type="module"></script>
+        <script src="polyfills.bf48b4cfb3d70be2.js" type="module"></script>
+        <script src="scripts.b8950142c82c6d1a.js" defer=""></script>
+        <script src="main.ece87bcd1de0f36a.js" type="module"></script>
+    </body>
 </html>
